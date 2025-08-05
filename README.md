@@ -67,6 +67,7 @@ Feel free to modify and send suggestions or pull requests. Issues and feedback a
 1. Split `sociallib/addition_tools.py` into `addition_tools.py` and `core.py`
 2. Use `sociallib/color_codes.py` in all scripts
 3. Implement more API features, like comment chapters
+4. Documentation
 
 ## License
 
