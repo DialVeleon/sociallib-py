@@ -14,7 +14,7 @@ Unofficial API for lib sites (mangalib.me, ranobelib.me, etc.)
 ## Installation
 
 ```
-pip install sociallib-py
+pip install mangalib-api
 ```
 
 > Note: This does not install the `examples/` folder.
