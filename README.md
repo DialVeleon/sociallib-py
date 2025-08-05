@@ -23,6 +23,8 @@ pip install sociallib-py
 
 Check the files in the `examples/` folder for usage examples. For instance:
 
+Create `user.json` file with json dictionary or pythonic dict with optional "Authorization" and "User-Agent" keys and other headers if you want.
+
 ```
 import asyncio
 from httpx import AsyncClient, Limits, Timeout
