@@ -143,7 +143,7 @@ class LibAccount:
         has_next_page = lambda onesearchdata: not onesearchdata["meta"]["has_next_page"]
         if site != _SITE_USER:
             addition_prompt0 = "&" + "&".join(("fields[]=" + e) for e in addition_info)
-        if site == SITE_ANIMELIB:
+        if site == _SITE_ANIMELIB:
             parse_class = _Anime
             site_name = "anime"
             has_next_page = lambda x: x["links"]["next"] is None
@@ -170,12 +170,12 @@ class LibAccount:
             site_name = site
             addition_prompt0 = "&limit=35&sort_by=subscribes_count&sort_type=desc"
             has_next_page = lambda onesearchdata: onesearchdata["links"]["next"] is None
-        elif site == SITE_TEAM:
+        elif site == _SITE_TEAM:
             parse_class = _Team
             site_name = site
             addition_prompt0 = ""
             has_next_page = lambda onesearchdata: onesearchdata["links"]["next"] is None
-        elif site == SITE_FRANCHISE:
+        elif site == _SITE_FRANCHISE:
             parse_class = _Franchise
             site_name = site
             has_next_page = lambda onesearchdata: onesearchdata["links"]["next"] is None
@@ -248,7 +248,7 @@ class LibAccount:
         min_pages=1,
     ) -> list[_Team]:
         return await self.search(
-            site=SITE_TEAM,
+            site=_SITE_TEAM,
             query=query,
             max_pages=max_pages,
             min_pages=min_pages,
@@ -278,7 +278,7 @@ class LibAccount:
         addition_info=["rate_avg", "rate", "releaseDate"],
     ) -> list[_Anime]:
         return await self.search(
-            site=SITE_ANIMELIB,
+            site=_SITE_ANIMELIB,
             query=query,
             max_pages=max_pages,
             min_pages=min_pages,
@@ -324,7 +324,7 @@ class LibAccount:
         self, query: str, max_pages=1, min_pages=1, subscriptions=True
     ) -> list[_Franchise]:
         return await self.search(
-            site=SITE_FRANCHISE,
+            site=_SITE_FRANCHISE,
             query=query,
             max_pages=max_pages,
             min_pages=min_pages,
